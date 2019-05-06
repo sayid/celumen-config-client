@@ -50,7 +50,7 @@ if (! function_exists('ReloadGEnv')) {
     {
         $config_HOST = env("CONFIG_HOST");
         $config_file = env("CONFIG_FILE");
-        if (empty($configFile) || empty($config_HOST)) {
+        if (empty($config_file) || empty($config_HOST)) {
             throw new Exception("请配置公共服务信息");
         }
         if ($config_file && $config_file) {

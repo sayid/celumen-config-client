@@ -16,6 +16,9 @@ if (! function_exists('GEnv')) {
     function GEnv($key, $default=null)
     {
         $configFile = env("CONFIG_FILE");
+        if (empty($configFile)) {
+            throw new Exception("请配置公共服务文件名");
+        }
         if ($configFile) {
             static $config;
             if (empty($config)) {
@@ -47,6 +50,9 @@ if (! function_exists('ReloadGEnv')) {
     {
         $config_HOST = env("CONFIG_HOST");
         $config_file = env("CONFIG_FILE");
+        if (empty($configFile) || empty($config_HOST)) {
+            throw new Exception("请配置公共服务信息");
+        }
         if ($config_file && $config_file) {
             //请求java的公共配置中心
             \GouuseCore\Helpers\ConfigHelper::downConfig($root_path, $config_HOST, $config_file);

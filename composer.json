@@ -3,9 +3,6 @@
     "description": "spring cloud config client",
     "type": "library",
     "version": "1.10.1",
-    "bin": [
-        "src/bin/ReloadGEnv"
-    ],
     "require": {
         "vlucas/phpdotenv": "~3.3"
     },

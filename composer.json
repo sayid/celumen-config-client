@@ -1,0 +1,38 @@
+{
+    "name": "lumen/config-client",
+    "description": "spring cloud config client",
+    "type": "library",
+    "version": "1.10.1",
+    "bin": [
+        "src/bin/ReloadGEnv"
+    ],
+    "require": {
+        "vlucas/phpdotenv": "~3.3"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Lumen\\Config\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "zyb",
+            "email": "449063862@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+  "repositories": [
+      {
+        "packagist": {
+          "type": "composer",
+          "url": "https://packagist.org"
+        }
+      }
+  ]
+}

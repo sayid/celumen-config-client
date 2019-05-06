@@ -1,5 +1,39 @@
 <?php
 
+
+/**
+ * 全局配置，去配置中心拿公共的配置,key前缀 支持数据中间用.隔开
+ */
+if (! function_exists('GEnv')) {
+    function GEnv($key, $default=null)
+    {
+        $configFile = env("CONFIG_FILE");
+        if ($configFile) {
+            static $config;
+            if (empty($config)) {
+                $yml = app()->basePath($configFile);
+                $config = yaml_parse_file($yml);
+            }
+            if (strpos($key, ".")) {
+                $keys = explode(".", $key);
+                $value = $config;
+                foreach ($keys as $key) {
+                    $value = $value[$key] ?? null;
+                    if ($value === null) {
+                        return $default;
+                    }
+                }
+            } else {
+                $value = $config[$key] ?? $default;
+            }
+            return $value ?? $default;
+        }
+        app()->configure("globalEnv");
+        return config("globalEnv.".$key);
+    }
+}
+
+
 if (! function_exists('ReloadGEnv')) {
     function ReloadGEnv($root_path)
     {

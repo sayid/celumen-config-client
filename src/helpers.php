@@ -1,5 +1,10 @@
 <?php
 
+if (! function_exists('testCon')) {
+    function testCon($key, $default = null)
+    {
+    }
+}
 
 /**
  * 全局配置，去配置中心拿公共的配置,key前缀 支持数据中间用.隔开

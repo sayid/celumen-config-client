@@ -1,4 +1,5 @@
 # lumen-config-client
+本项目为基于spring cloud config公共配置中心的php客户端，lumen框架中引入composer包后，启动Swoole服务即可使用
 
 1、在.env中配置
 ```

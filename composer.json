@@ -2,7 +2,8 @@
     "name": "celumen/config-client",
     "description": "spring cloud config client",
     "type": "library",
-    "version": "5.2.0",
+    "license": "MIT",
+    "version": "5.2.1",
     "require": {
         "vlucas/phpdotenv": "~5.2"
     },
